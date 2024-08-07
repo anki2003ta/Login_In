@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const datas = require("./models/signup.js");
 const path = require("path");
 const port = 3000;
-
+//const dbUrl=process.env.ATLASDB_URL;
 
 
 
@@ -26,7 +26,9 @@ main()
     console.log(err);
   });
 async function main() {
- await mongoose.connect("mongodb://127.0.0.1:27017/signup");
+ //await mongoose.connect("mongodb://127.0.0.1:27017/signup");
+  
+ await mongoose.connect("mongodb+srv://Ankita:Ankita@cluster0.d2o5d.mongodb.net/?retryWrites=true&w=majority");
 }
 
 //To handle errors after initial connection was established, you should listen for error events on the connection.
